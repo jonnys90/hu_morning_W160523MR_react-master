@@ -15,8 +15,8 @@ import store from "./store/bigPie";
 import { Provider } from "react-redux";
 import { getToken } from "./service/storageService";
 
-// axios.defaults.baseURL = process.env.REACT_APP_SERVER_URL;
-axios.defaults.baseURL = "https://monkfish-app-z9uza.ondigitalocean.app/bcard2";
+axios.defaults.baseURL = process.env.REACT_APP_SERVER_URL;
+// axios.defaults.baseURL = "https://monkfish-app-z9uza.ondigitalocean.app/bcard2";
 axios.interceptors.request.use((config) => {
   const token = getToken();
   if (token) {
@@ -39,7 +39,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <BrowserRouter basename="/hu_morning_W160523MR_react-master/">
+      {/* <BrowserRouter basename="/hu_morning_W160523MR_react-master/"> */}
+      <BrowserRouter basename={process.env.REACT_APP_BASE_URL}>
         <App />
       </BrowserRouter>
     </Provider>
