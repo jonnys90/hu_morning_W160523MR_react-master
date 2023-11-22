@@ -37,7 +37,6 @@ axios.interceptors.request.use((config) => {
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-console.log("public", process.env.PUBLIC_URL);
 root.render(
   <React.StrictMode>
     <Provider store={store}>

@@ -18,8 +18,11 @@ const HomePage = () => {
     axios
       .get("/cards")
       .then(({ data }) => {
-        if (userData) data = homePageNormalization(data, userData._id);
-        setDataFromServer(data);
+        // if (userData) data = homePageNormalization(data, userData._id);
+        // setDataFromServer(data);
+        setDataFromServer(
+          homePageNormalization(data, userData && userData._id)
+        );
       })
       .catch((err) => {
         console.log("err", err);
