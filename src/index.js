@@ -40,8 +40,8 @@ root.render(
   <React.StrictMode>
     <Provider store={store}>
       {/* <BrowserRouter basename="/hu_morning_W160523MR_react-master/"> */}
-      {/* <BrowserRouter basename={process.env.REACT_APP_BASE_URL}> */}
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.REACT_APP_BASE_URL}>
+        {/* <BrowserRouter> */}
         <App />
       </BrowserRouter>
     </Provider>
